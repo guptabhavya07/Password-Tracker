@@ -1,19 +1,18 @@
-const express = require('express')
-const dotenv=require('dotenv')
-const { MongoClient } = require('mongodb');
-const bodyparser=require('body-parser')
-const cors=require('cors')
+import express from 'express'
+import dotenv from 'dotenv'
+import { MongoClient } from 'mongodb';
+import bodyparser from 'body-parser'
+import cors from 'cors'
 // or as an es module:
 // import { MongoClient } from 'mongodb'
 dotenv.config()
 
 // Connection URL
 const url = process.env.MONGO_URI;
-
 const client = new MongoClient(url);
 
 // Database Name
-const dbName = 'passop';
+const dbName = 'password-tracker';
 const app = express()
 const port = 3000
 app.use(bodyparser.json())
@@ -42,5 +41,5 @@ app.delete('/', async (req, res) => {
   res.send({success:true,result:findResult})
 })
 app.listen(port, () => {
-  console.log(`Example app listening  http://localhost:${port}`)
+  console.log(`app listening ${port}`)
 })
