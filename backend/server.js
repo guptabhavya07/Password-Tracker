@@ -1,7 +1,7 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import { MongoClient } from 'mongodb';
-import bodyparser from 'body-parser'
+import bodyParser from 'body-parser'
 import cors from 'cors'
 // or as an es module:
 // import { MongoClient } from 'mongodb'
@@ -15,7 +15,7 @@ const client = new MongoClient(url);
 const dbName = 'password-tracker';
 const app = express()
 const port = 3000
-app.use(bodyparser.json())
+app.use(bodyParser.json())
 app.use(cors())
 
  client.connect();
