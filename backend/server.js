@@ -7,7 +7,7 @@ import cors from 'cors';
 dotenv.config();
 
 // Connection URL
-const url = `mongodb+srv://bhavyagupta07:${process.env.MONGO_PASSWD}@cluster0.vblzf9e.mongodb.net`;
+const url = `mongodb+srv://bhavyagupta07:${process.env.MONGO_PASSWD}@cluster0.vblzf9e.mongodb.net/test?retryWrites=true&w=majority`;
 const client = new MongoClient(url);
 
 // Database Name
